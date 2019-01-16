@@ -8,10 +8,12 @@ To make this plot I use the libraries below
 library(ggplot2);library(dplyr);
 ```
 
-First of all we have to import the dataset [plotGG.csv](https://github.com/WOLFurriell/ContingencyPlot/blob/master/plotGG.csv) and agroup by genre using dplyr, this data have 3 columns these are:
-Var1 - The genre of the movie
-Var2 - The order of genre in IMDb
-Freq - The frequency of genre
+First of all we have to import the dataset [plotGG.csv](https://github.com/WOLFurriell/ContingencyPlot/blob/master/plotGG.csv) and agroup by genre using dplyr, for this example the data is already grouped.
+
+This dataset have 3 columns these are:
+Var1 - The genre of the movie;
+Var2 - The order of genre in IMDb;
+Freq - The frequency of genre.
 
 ```r
 tab  <- read.table("\\XXX PUT YOUR DIRECTORY XXX\\plotGG.csv",sep = ";",header = T)
