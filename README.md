@@ -1,4 +1,4 @@
-# Contingency Plot with line for total sum in ggplo2
+# Contingency Plot with line for total sum in ggplot2
 
 To make this plot I use the libraries below
 
@@ -20,7 +20,7 @@ tab1 <- tab %>%
 
 levels(tab1$Var2) <- c("1º", "2º","3º")
 ```
-In the next dataset we need to summarize the frequency by genre without considering the position see in Var2
+In the next dataset we need to summarize the frequency by genre without considering the order(Var2) and repeat this information to each combination of gender and order, in this case we repeat 3 times.
 
 ```r
 tab2 <- tab %>%
