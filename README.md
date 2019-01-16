@@ -61,4 +61,4 @@ ggplot(data = tab1, aes(x = reorder(Var1, -Freq), y = Freq, fill = Var2)) +
 ```
 And finally the plot
 
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+!(https://github.com/WOLFurriell/ContingencyPlot/blob/master/genre2018.jpeg)
