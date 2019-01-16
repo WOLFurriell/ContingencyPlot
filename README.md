@@ -1,6 +1,6 @@
 # Contingency Plot with line for total sum in ggplo2
 
-```
+```r
 tab  <- read.table("PUT YOUR PATH",sep = ";",header = T)
 
 tab1 <- tab %>%
