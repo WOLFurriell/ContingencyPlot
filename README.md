@@ -1,6 +1,7 @@
 # Contingency Plot with line for total sum in ggplot2
 
-Do you know how to add a line to represent the sum on top of mutiple bars in ggplot2? In this simple tutorial I will show you how to do that.
+Do you know how to add a line to represent the sum on top of mutiple bars in ggplot2? 
+In this simple tutorial I will show you how to do that.
 To make this plot I use the libraries below
 
 ```r
