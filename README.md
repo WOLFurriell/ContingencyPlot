@@ -66,3 +66,5 @@ ggplot(data = tab1, aes(x = reorder(Var1, -Freq), y = Freq, fill = Var2)) +
 After this list of commands finally we can see the plot
 
 <img align="center" width="800" height="400" src="https://github.com/WOLFurriell/ContingencyPlot/blob/master/genre2018.jpeg">
+
+You can see the script wihtout comments here [script](https://github.com/WOLFurriell/ContingencyPlot/blob/master/imdb_plot.R)
