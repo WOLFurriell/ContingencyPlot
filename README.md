@@ -1,19 +1,19 @@
 # Contingency Plot with line for total sum in ggplot2
 
-Does anyone know how to add a line to represent the sum on top of mutiple bars in ggplot2? In this simple tutorial I will show you how to do that.
+Do you know how to add a line to represent the sum on top of mutiple bars in ggplot2? In this simple tutorial I will show you how to do that.
 To make this plot I use the libraries below
 
 ```r
-library(ggplot2);library(dplyr);library(reshape);library(grid)
+library(ggplot2);library(dplyr);
 ```
 
-First we have to import and agroup the dataset using dplyr, this data have 3 columns 
-Var1:The genre of the movie
-Var2:The order of genre in IMDb
-Freq:The frequency of genre
+First of all we have to import and agroup the dataset using dplyr, this data have 3 columns these are:
+Var1 - The genre of the movie
+Var2 - The order of genre in IMDb
+Freq - The frequency of genre
 
 ```r
-tab  <- read.table("PUT YOUR PATH",sep = ";",header = T)
+tab  <- read.table("XXX PUT YOUR DIRECTORY XXX",sep = ";",header = T)
 
 tab1 <- tab %>%
         group_by(Var1,Var2) %>%
@@ -21,7 +21,7 @@ tab1 <- tab %>%
 
 levels(tab1$Var2) <- c("1º", "2º","3º")
 ```
-In the next dataset we need to summarize the frequency by genre without considering the order(Var2) and repeat this information to each combination of gender and order, in this case we repeat 3 times.
+In the next dataset we need to summarize the frequency by genre without considering the order(Var2) and repeat this information to each combination of gender and order, in this case we repeat 3 times. This information will be use to put the sum line.
 
 ```r
 tab2 <- tab %>%
@@ -30,7 +30,7 @@ tab2 <- tab %>%
 tab1$soma <- rep(tab2$Freq, each=length(levels(tab1$Var2)))
 ```
 
-I like to use cleaner themes in my graphics, so I create this function, but you can uso another one of your preference
+I like to use cleaner themes in my graphics, so I create this function, but you can use another one of your preference or use the default
 
 ```r
 my_theme <- function(){
@@ -44,7 +44,7 @@ my_theme <- function(){
           legend.position="bottom")
 }
 ```
-Here is the syntax in ggplot2 to make the plot, 
+Here is the syntax in ggplot2 to make the plot, beyond the line a put the sum points too. For layers not be grouped in the legend I made some changes in guides.
 
 ```r
 ggplot(data = tab1, aes(x = reorder(Var1, -Freq), y = Freq, fill = Var2)) +
@@ -60,6 +60,6 @@ ggplot(data = tab1, aes(x = reorder(Var1, -Freq), y = Freq, fill = Var2)) +
                                shape = FALSE)  +
   my_theme() -> genreP;genreP
 ```
-And finally the plot
+After this list of commands finally we can see the plot
 
 <img align="center" width="800" height="400" src="https://github.com/WOLFurriell/ContingencyPlot/blob/master/genre2018.jpeg">
